@@ -51,9 +51,12 @@ public static class AspectSyntaxFactory
                     // List all constructor of arguments following the constructor parameters of the nested aspect.
                     foreach (var param in nestedAspect.Definition.PrimitivesRouter.AllConstructorParameters)
                     {
+                        /*
                         // Get the AspectField that named the constructor parameter that routes to the current argument
                         var originalField = aspect.PrimitivesRouter.GetRoutedFieldForAlias(param.DeclaringAspectField, out var tag);
                         constructorArgumentList.NextItemPrinter().Print(originalField.GetParameterName(tag));
+                        */
+                        constructorArgumentList.NextItemPrinter().Print(param.ParameterName);
                     }
 
                     scope.PrintEndLine(");");
